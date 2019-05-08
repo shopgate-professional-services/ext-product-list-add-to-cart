@@ -1,9 +1,13 @@
 {
-  "version": "0.1.0",
-  "id": "@shopgate-project/boilerplate-extension",
+  "version": "1.0.0",
+  "id": "@shopgate-project/product-list-add-to-cart",
   "components": [
-    
+    {
+      "id": "ProductItemFavoritesButtonAfter",
+      "path": "frontend/portals/ProductItemFavoritesButtonAfter",
+      "target": "product-item.favorites-button.after",
+      "type": "portals"
+    }
   ],
-  "configuration": {
-  }
+  "configuration": {}
 }

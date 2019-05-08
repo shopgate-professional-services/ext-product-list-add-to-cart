@@ -1,15 +1,14 @@
 {
-  "name": "@shopgate-project/boilerplate-extension",
-  "version": "0.1.0",
-  "description": "",
+  "name": "@shopgate-project/product-list-add-to-cart",
+  "version": "1.0.0",
+  "description": "Allows users to add desired quantity from a product list view.",
   "license": "Apache-2.0",
   "scripts": {
     "lint": "eslint --parser babel-eslint --ignore-path ../.gitignore --ignore-path .eslintignore --ext .js --ext .jsx .",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "coverage": "jest --coverage",
-    "coverage:watch": "npm run coverage -- --watch",
-    "dummy": ""
+    "coverage:watch": "npm run coverage -- --watch"
   },
   "devDependencies": {
     "@shopgate/eslint-config": "^6.3.1",
