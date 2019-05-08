@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import BasePicker from '@shopgate/pwa-common/components/Picker';
 import Sheet from '@shopgate/pwa-ui-shared/Sheet';
-import AddToCartButton from './components/AddToCartButton';
+import AddToCartPickerButton from './components/AddToCartPickerButton';
 
 /**
  * The AddToCartPicker component.
@@ -19,7 +19,7 @@ class AddToCartPicker extends Component {
         items={[]}
         modalComponent={() => (<Sheet title="Aaron is amazing" />)}
         buttonProps={{}}
-        buttonComponent={AddToCartButton}
+        buttonComponent={AddToCartPickerButton}
         listComponent={() => { }}
         onSelect={() => { }}
       />
