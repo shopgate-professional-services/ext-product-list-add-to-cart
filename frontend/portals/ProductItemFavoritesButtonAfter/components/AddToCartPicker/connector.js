@@ -5,6 +5,7 @@ import {
   isProductOrderable,
   getProductStock,
 } from '@shopgate/pwa-common-commerce/product/selectors/product';
+import addProductsToCart from '@shopgate/pwa-common-commerce/cart/actions/addProductsToCart';
 
 const mapStateToProps = (state, props) => ({
   product: getProduct(state, props),
@@ -13,4 +14,10 @@ const mapStateToProps = (state, props) => ({
   stock: getProductStock(state, props),
 });
 
-export default connect(mapStateToProps);
+const mapDispatchToProps = (dispatch, { productId }) => ({
+  handleAddToCart: quantity => (
+    dispatch(addProductsToCart([{ quantity, productId }]))
+  ),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps);

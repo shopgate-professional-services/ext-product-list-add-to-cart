@@ -12,43 +12,54 @@ import createPickerItems from '../../../../helpers/createPickerItems';
  * The AddToCartPicker component.
  */
 class AddToCartPicker extends Component {
-
   state = {
     addedQuantity: 0,
   };
 
-  listComponent = ({ items, onSelect }) => (
-    <List>
-      {items.map(item => (
-        <List.Item
-          key={item.value}
-          title={item.label}
-          onClick={() => {
+  listComponent = ({ items, onSelect }) => {
+    console.log('listComponent');
+    return (
+      <List>
+        {items.map(item => (
+          <List.Item
+            key={item.value}
+            title={item.label}
+            onClick={() => {
             setTimeout(() => {
               onSelect(item.value);
             }, 50);
           }}
-        />
+          />
       ))}
-    </List>
-  );
+      </List>
+    );
+  };
+  modalComponent = modalProps =>
+    (<Sheet {...modalProps} title="Aaron is amazing" />);
 
+  handelAddToCart = (quantity) => {
+    this.props.handleAddToCart(quantity);
 
+    this.setState({
+      addedQuantity: this.state.addedQuantity + quantity,
+    });
+  }
   /**
    * Renders the component.
    * @returns {JSX}
    */
   render() {
+    //Todo check for configurable product
     const pickerItems = createPickerItems(this.props.stock);
     return (
       <BasePicker
-        onClick={()=>{}}
+        onClick={this.handelAddToCart}
         items={pickerItems}
-        modalComponent={() => (<Sheet title="Aaron is amazing" />)}
-        buttonProps={{}}
+        modalComponent={this.modalComponent}
+        buttonProps={{disabled: !this.props.isOrderable}}
         buttonComponent={AddToCartButton}
         listComponent={this.listComponent}
-        onSelect={()=>{}}
+        onSelect={this.handelAddToCart}
       />
     );
   }
