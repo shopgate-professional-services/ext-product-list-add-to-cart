@@ -1,16 +1,14 @@
 import { createSelector } from 'reselect';
-
-/**
- * @param {Object} state state
- * @returns {Object}
- */
-const getDummyState = state => state.dummy;
+import { getProduct } from '@shopgate/pwa-common-commerce/product/selectors/product';
 
 /**
  * Returns dummies
  * @return {Array}
  */
-export const getDummies = createSelector(
-  getDummyState,
-  dummy => dummy
+export const getProductName = createSelector(
+  getProduct,
+  (product) => {
+    const { name = null } = product || {};
+    return name;
+  }
 );
