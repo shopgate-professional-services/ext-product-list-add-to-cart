@@ -2,7 +2,7 @@ import Event from '@shopgate/pwa-core/classes/Event';
 import PropTypes from 'prop-types';
 import AddToCartButton from '@shopgate/pwa-ui-shared/AddToCartButton';
 import { EVENT_ADD_TO_CART_MISSING_VARIANT } from '@shopgate/pwa-common-commerce/cart/constants';
-import { ADD_TO_CART_BUTTON_TYPE_DEFAULT } from '../../../../../../constants';
+import { ADD_TO_CART_BUTTON_TYPE_DEFAULT } from '../../../../../../../../constants';
 
 /**
  * Renders AddToCartButton

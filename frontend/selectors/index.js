@@ -1,16 +1,14 @@
 import { createSelector } from 'reselect';
+import { getFavoritesProductsIds } from '@shopgate/pwa-common-commerce/favorites/selectors';
 
 /**
- * @param {Object} state state
- * @returns {Object}
+ * Checks if a product is an the favorite list.
+ * @param {Object} props A component props object.
+ * @param {string} props.productId The id of the inspected product.
+ * @return {boolean}
  */
-const getDummyState = state => state.dummy;
-
-/**
- * Returns dummies
- * @return {Array}
- */
-export const getDummies = createSelector(
-  getDummyState,
-  dummy => dummy
+export const isProductOnFavoriteList = createSelector(
+  getFavoritesProductsIds,
+  (props = {}) => props.productId,
+  (productIds, productId) => !!productIds.find(id => id === productId)
 );

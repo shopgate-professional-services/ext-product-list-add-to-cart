@@ -3,9 +3,9 @@
   "id": "@shopgate-project/product-list-add-to-cart",
   "components": [
     {
-      "id": "ProductItemFavoritesButtonAfter",
-      "path": "frontend/portals/ProductItemFavoritesButtonAfter",
-      "target": "product-item.favorites-button.after",
+      "id": "ProductItemFavoritesButton",
+      "path": "frontend/portals/ProductItemFavoritesButton",
+      "target": "product-item.favorites-button",
       "type": "portals"
     }
   ],
