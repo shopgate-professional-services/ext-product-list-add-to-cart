@@ -1,6 +1,1 @@
-export const RECEIVE_DUMMIES = 'RECEIVE_DUMMIES';
-export const REQUEST_DUMMIES = 'REQUEST_DUMMIES';
-export const ERROR_DUMMIES = 'ERROR_DUMMIES';
-
-export const DUMMY_PATH = '/dummy';
-
+export const ADD_TO_CART_BUTTON_TYPE_DEFAULT = 'default';
