@@ -21,10 +21,11 @@ class AddToCartPickerButton extends AddToCartButton {
   }
 
   /**
- * Click handler for the button.
- * @return {boolean}
- */
-  handleClick = () => {
+   * Click handler for the button.
+   * @return {boolean}
+   */
+  handleClick = (event) => {
+    event.stopPropagation();
     const { showCheckmark } = this.state;
     const {
       isDisabled,
@@ -47,11 +48,9 @@ class AddToCartPickerButton extends AddToCartButton {
 
         return false;
       }
-
+      openList();
       return undefined;
     });
-
-    openList();
 
     return true;
   }
