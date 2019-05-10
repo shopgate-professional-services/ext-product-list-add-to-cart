@@ -12,10 +12,10 @@ import { bin2hex } from '@shopgate/pwa-common/helpers/data';
 import { getProductName } from '../../../../../../selectors';
 
 /**
- * Maps
- * @param {Object} state state
- * @param {Object} props props
- * @returns {Object}
+* Maps the contents of the state to the component props.
+ * @param {Object} state The current application state.
+ * @param {Object} props The component props.
+ * @returns {Object} The extended component props.
  */
 const mapStateToProps = (state, props) => ({
   productName: getProductName(state, props),
@@ -25,14 +25,16 @@ const mapStateToProps = (state, props) => ({
 });
 
 /**
- * Maps
- * @param {Func} dispatch dispatch
- * @param {string} productId productId
+ * Connect the dispatch function to a callable function in props.
+ * @param {Funcion} dispatch The redux dispatch function.
+ * @param {string} productId productId for given card in product list
  * @returns {Object}
  */
 const mapDispatchToProps = (dispatch, { productId }) => ({
   handleAddToCart: quantity => (
-    dispatch(addProductsToCart([{ quantity, productId }]))
+    dispatch(addProductsToCart([{
+      quantity, productId,
+    }]))
   ),
   showModal: options => dispatch(showModal(options)),
   goToProductPage: () => (

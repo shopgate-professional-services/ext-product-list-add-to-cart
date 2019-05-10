@@ -22,6 +22,7 @@ class AddToCartPickerButton extends AddToCartButton {
 
   /**
    * Click handler for the button.
+   * @param {Object} event The tap event
    * @return {boolean}
    */
   handleClick = (event) => {

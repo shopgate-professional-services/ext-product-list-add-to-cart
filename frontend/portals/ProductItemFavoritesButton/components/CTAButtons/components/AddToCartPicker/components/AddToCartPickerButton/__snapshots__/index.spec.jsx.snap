@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddToCartPickerButton should render 1`] = `
+<button
+  className="null css-68omm3 css-nil"
+  data-test-id="addToCartButton"
+  onClick={[Function]}
+>
+  <div
+    className="css-rukjns"
+    style={
+      Object {
+        "opacity": 1,
+        "transform": "translate3d(0, 300%, 0)",
+      }
+    }
+  >
+    <Tick />
+  </div>
+  <div
+    className="css-rukjns"
+    onAnimationEnd={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+        "transform": "translate3d(0, -50%, 0)",
+      }
+    }
+  >
+    <CartPlus />
+  </div>
+</button>
+`;

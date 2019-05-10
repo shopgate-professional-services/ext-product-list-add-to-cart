@@ -89,7 +89,10 @@ class AddToCartPicker extends Component {
       return false;
     }
     if (!isSimpleProduct) {
-      showModal({ message: 'This product has options', confirm: 'Go to product page' })
+      showModal({
+        message: 'product_list_add_to_cart.modal.message',
+        confirm: 'product_list_add_to_cart.modal.confirm',
+      })
         .then((result) => {
           if (result) {
             goToProductPage();
@@ -100,6 +103,9 @@ class AddToCartPicker extends Component {
     return true;
   }
 
+  /**
+   * @returns {JSX}
+   */
   listComponent = ({ items, onSelect }) => (
     <List>
       {items.map(item => (
@@ -115,9 +121,18 @@ class AddToCartPicker extends Component {
       ))}
     </List>
   );
+
+  /**
+   * @param {Object} modalProps Props for modal
+   * @returns {JSX}
+   */
   modalComponent = modalProps =>
     (<Sheet {...modalProps} title={`Choose Quantity for ${this.props.productName}`} />);
 
+  /**
+   * Function to handle cart
+   * @param {number} quantity quantity selected.
+   */
   handelAddToCart = (quantity) => {
     this.props.handleAddToCart(quantity);
 
@@ -132,7 +147,6 @@ class AddToCartPicker extends Component {
    */
   render() {
     const pickerItems = createPickerItems(this.props.stock, maxEntries);
-    console.warn(this.props);
     return (
       <BasePicker
         modalComponent={this.modalComponent}

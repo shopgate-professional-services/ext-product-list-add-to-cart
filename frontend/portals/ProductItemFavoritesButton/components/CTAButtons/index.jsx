@@ -6,9 +6,8 @@ import connect from './connector';
 import styles from './style';
 
 /**
- * Renders CTA buttons for product page (add to cart + toggle favorites).
- *
- * @param {Object} props Props.
+ * Renders CTA buttons for product listing cards (add to cart + toggle favorites).
+ * @param {Object} props The component props.
  * @returns {JSX}
  * @constructor
  */

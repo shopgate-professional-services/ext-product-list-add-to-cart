@@ -1,5 +1,8 @@
 {
-  "myExt": {
-    "dummy": "Dummy"
+  "product_list_add_to_cart": {
+    "modal": {
+      "message": "Dieses Produkt hat Varianten",
+      "confirm": "Zur Produkt Seite"
+    }
   }
 }
