@@ -16,7 +16,7 @@ export const isProductOnFavoriteList = createSelector(
 );
 
 /**
- * Returns dummies
+ * Returns product name
  * @return {Array}
  */
 export const getProductName = createSelector(

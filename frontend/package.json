@@ -1,6 +1,6 @@
 {
   "name": "@shopgate-project/product-list-add-to-cart",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.2",
   "description": "Allows users to add desired quantity from a product list view.",
   "license": "Apache-2.0",
   "scripts": {

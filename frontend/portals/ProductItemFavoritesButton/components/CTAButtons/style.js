@@ -4,7 +4,7 @@ import { themeConfig } from '@shopgate/pwa-common/helpers/config';
 const { variables } = themeConfig;
 
 // Cart ratio is approx 2.33/1
-const cartButtonSize = variables.big * 2.33;
+const cartButtonSize = (variables.big * 2.33);
 const cartButtonIconSize = variables.big;
 
 const buttons = css({

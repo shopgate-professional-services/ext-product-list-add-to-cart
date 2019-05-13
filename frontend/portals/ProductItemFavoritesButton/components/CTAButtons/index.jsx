@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FavoritesButton from '@shopgate/pwa-ui-shared/FavoritesButton';
-import AddToCartPicker from './components/AddToCartPicker/index';
+import AddToCartPicker from './components/AddToCartPicker/';
 import connect from './connector';
 import styles from './style';
 
