@@ -1,8 +1,9 @@
 {
   "product_list_add_to_cart": {
     "modal": {
-      "message": "Dieses Produkt hat Varianten",
-      "confirm": "Zur Produkt Seite"
-    }
+      "message": "Um dieses Produkt zum Warenkorb hinzuzufügen, wählen Sie bitte die Varianten.",
+      "confirm": "Varianten wählen"
+    },
+    "sheet_title": "Menge wählen für"
   }
 }

@@ -1,8 +1,9 @@
 {
   "product_list_add_to_cart": {
     "modal": {
-      "message": "This product has options",
-      "confirm": "Go to product page"
-    }
+      "message": "To add this product to your cart, please select the variants.",
+      "confirm": "Select variants"
+    },
+    "sheet_title": "Choose Quantity for"
   }
 }

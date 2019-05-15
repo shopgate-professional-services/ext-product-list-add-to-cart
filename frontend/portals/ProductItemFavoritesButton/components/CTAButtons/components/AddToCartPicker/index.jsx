@@ -36,6 +36,10 @@ class AddToCartPicker extends Component {
     stock: null,
   };
 
+  static contextTypes = {
+    i18n: PropTypes.func,
+  };
+
   /**
    * Component Constructor
    * @param {Object} props Component props
@@ -126,8 +130,11 @@ class AddToCartPicker extends Component {
    * @param {Object} modalProps Props for modal
    * @returns {JSX}
    */
-  modalComponent = modalProps =>
-    (<Sheet {...modalProps} title={`Choose Quantity for ${this.props.productName}`} />);
+  modalComponent = (modalProps) => {
+    const { __ } = this.context.i18n();
+    const translatedTitle = __('product_list_add_to_cart.sheet_title');
+    return (<Sheet {...modalProps} title={`${translatedTitle} ${this.props.productName}`} />);
+  }
 
   /**
    * Function to handle cart
