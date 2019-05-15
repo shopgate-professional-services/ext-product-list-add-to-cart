@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CTAButtons should render CTAButtons 1`] = `<Connect(CTAButtons) />`;
