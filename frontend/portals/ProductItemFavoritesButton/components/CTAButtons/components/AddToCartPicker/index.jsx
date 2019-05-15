@@ -96,6 +96,7 @@ class AddToCartPicker extends Component {
       showModal({
         message: 'product_list_add_to_cart.modal.message',
         confirm: 'product_list_add_to_cart.modal.confirm',
+        dismiss: 'product_list_add_to_cart.modal.cancel',
       })
         .then((result) => {
           if (result) {

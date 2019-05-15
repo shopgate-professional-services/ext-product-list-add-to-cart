@@ -2,7 +2,8 @@
   "product_list_add_to_cart": {
     "modal": {
       "message": "Um dieses Produkt zum Warenkorb hinzuzufügen, wählen Sie bitte die Varianten.",
-      "confirm": "Varianten wählen"
+      "confirm": "Varianten wählen",
+      "cancel": "Abbrechen"
     },
     "sheet_title": "Menge wählen für"
   }
