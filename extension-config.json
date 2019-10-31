@@ -1,10 +1,10 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "id": "@shopgate-project/product-list-add-to-cart",
   "components": [
     {
       "id": "ProductItemFavoritesButton",
-      "path": "frontend/portals/ProductItemFavoritesButton",
+      "path": "frontend/portals/ProductItemFavoritesButton/index.jsx",
       "target": "product-item.favorites-button",
       "type": "portals"
     },

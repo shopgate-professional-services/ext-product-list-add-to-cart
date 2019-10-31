@@ -9,7 +9,7 @@ Add the Terms and conditions extension to your Shopgate Connect deployment confi
 (...)
     {
         "id": "@shopgate-project/product-list-add-to-cart",
-        "version": "1.0.0"
+        "version": "1.0.1"
     }
 (...)
 ```
@@ -22,7 +22,7 @@ If stock is less then maxEntries then stock amount will be used for number of qu
 ## Example Config
 ```
   {
-    maxEntries: 20
+    maxEntries: 30
   }
 ```
 
