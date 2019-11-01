@@ -26,6 +26,7 @@ class AddToCartPicker extends Component {
     showModal: PropTypes.func,
     stock: PropTypes.shape(),
   }
+
   static defaultProps = {
     goToProductPage: () => { },
     handleAddToCart: () => { },
@@ -49,6 +50,7 @@ class AddToCartPicker extends Component {
     this.productConditioner = new Conditioner();
     this.productConditioner.addConditioner('validateProduct', this.validateProduct);
   }
+
   state = {
     addedQuantity: 0,
   };
@@ -111,7 +113,7 @@ class AddToCartPicker extends Component {
   /**
    * @returns {JSX}
    */
-  listComponent = ({ items, onSelect }) => (
+  listComponent = ({ items, onSelect, onClose }) => (
     <List>
       {items.map(item => (
         <List.Item
@@ -120,6 +122,7 @@ class AddToCartPicker extends Component {
           onClick={() => {
             setTimeout(() => {
               onSelect(item.value);
+              onClose();
             }, clickDelay);
           }}
         />
@@ -144,9 +147,9 @@ class AddToCartPicker extends Component {
   handelAddToCart = (quantity) => {
     this.props.handleAddToCart(quantity);
 
-    this.setState({
-      addedQuantity: this.state.addedQuantity + quantity,
-    });
+    this.setState(prevState => ({
+      addedQuantity: prevState.addedQuantity + quantity,
+    }));
   };
 
   /**
@@ -160,7 +163,6 @@ class AddToCartPicker extends Component {
         modalComponent={this.modalComponent}
         buttonProps={this.buttonProps}
         buttonComponent={AddToCartPickerButton}
-        onClick={this.handelAddToCart}
         items={pickerItems}
         listComponent={this.listComponent}
         onSelect={this.handelAddToCart}

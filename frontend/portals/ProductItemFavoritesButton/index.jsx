@@ -1,11 +1,11 @@
 import React from 'react';
-import CTAButtons from './components/CTAButtons/';
+import CTAButtons from './components/CTAButtons';
 
 /**
  * Renders CTA buttons in product-item.favorites-button portal
  * @param {Object} props props
  * @returns {JSX}
  */
-const ProductItemFavoritesButton = props => <CTAButtons {...props} />;
+const ProductItemFavoritesButton = props => (<CTAButtons {...props} />);
 
 export default ProductItemFavoritesButton;

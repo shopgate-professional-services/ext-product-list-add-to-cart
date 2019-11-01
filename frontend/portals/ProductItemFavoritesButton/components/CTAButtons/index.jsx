@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FavoritesButton from '@shopgate/pwa-ui-shared/FavoritesButton';
-import AddToCartPicker from './components/AddToCartPicker/';
+import AddToCartPicker from './components/AddToCartPicker';
 import connect from './connector';
 import styles from './style';
 
@@ -16,6 +16,7 @@ const CTAButtons = (props) => {
     buttonSize: styles.cartButtonSize,
     iconSize: styles.cartButtonIconSize,
   };
+
   return (
     <div className={styles.buttons}>
       <FavoritesButton
