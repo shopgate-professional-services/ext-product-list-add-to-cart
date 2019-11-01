@@ -49,9 +49,9 @@ class AddToCartButton extends Component {
   }
 
   /**
- * Component did update lifecycle hook.
- * @param {Object} prevProps The previous props.
- */
+   * Component did update lifecycle hook.
+   * @param {Object} prevProps The previous props.
+   */
   componentDidUpdate(prevProps) {
     if (this.props.addedQuantity > prevProps.addedQuantity) {
       // Trigger the button animation when the quantity was increased.
@@ -62,8 +62,8 @@ class AddToCartButton extends Component {
   }
 
   /**
-* Called when the added quantity was increased. It triggers the button animation.
-*/
+   * Called when the added quantity was increased. It triggers the button animation.
+   */
   onQuantityIncreased() {
     this.setState({
       showCheckmark: true,
