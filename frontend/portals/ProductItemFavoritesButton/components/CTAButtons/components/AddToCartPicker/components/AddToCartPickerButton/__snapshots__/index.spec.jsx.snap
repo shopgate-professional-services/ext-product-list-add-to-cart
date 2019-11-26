@@ -2,9 +2,12 @@
 
 exports[`AddToCartPickerButton should render 1`] = `
 <button
+  aria-hidden={false}
+  aria-label={null}
   className="null css-68omm3 css-nil"
   data-test-id="addToCartButton"
   onClick={[Function]}
+  type="button"
 >
   <div
     className="css-rukjns"
@@ -15,7 +18,7 @@ exports[`AddToCartPickerButton should render 1`] = `
       }
     }
   >
-    <Tick />
+    <TickIcon />
   </div>
   <div
     className="css-rukjns"
@@ -27,7 +30,7 @@ exports[`AddToCartPickerButton should render 1`] = `
       }
     }
   >
-    <CartPlus />
+    <CartPlusIcon />
   </div>
 </button>
 `;

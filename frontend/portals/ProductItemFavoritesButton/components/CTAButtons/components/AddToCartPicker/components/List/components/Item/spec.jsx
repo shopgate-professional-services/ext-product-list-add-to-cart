@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Glow from '@shopgate/pwa-ui-shared/Glow';
 import List from '../../index';
 
 jest.mock('@shopgate/pwa-common/components/Link', () => {
@@ -10,6 +9,16 @@ jest.mock('@shopgate/pwa-common/components/Link', () => {
    */
   const Link = () => <div />;
   return Link;
+});
+
+jest.mock('@shopgate/pwa-ui-shared/Glow', () => {
+  /**
+   * Mocked LinkComponent.
+   * @param {Node} children Component children
+   * @return {JSX}
+   */
+  const Glow = ({ children }) => <div>{children}</div>;
+  return Glow;
 });
 
 describe('<List.Item />', () => {
@@ -41,20 +50,6 @@ describe('<List.Item />', () => {
 
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.contains(<span>I`m a span.</span>)).toEqual(true);
-  });
-
-  it('should render without a Glow when selected', () => {
-    const wrapper = mount(<List.Item title={title} isSelected />);
-
-    expect(wrapper).toMatchSnapshot();
-    expect(wrapper.find(Glow).exists()).toBeFalsy();
-  });
-
-  it('should render without a Glow when disabled', () => {
-    const wrapper = mount(<List.Item title={title} isDisabled />);
-
-    expect(wrapper).toMatchSnapshot();
-    expect(wrapper.find(Glow).exists()).toBeFalsy();
   });
 
   it('should render with a link', () => {
