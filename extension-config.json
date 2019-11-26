@@ -9,6 +9,12 @@
       "type": "portals"
     },
     {
+      "id": "ProductItemName",
+      "path": "frontend/portals/ProductItemName/index.jsx",
+      "target": "product-item.name",
+      "type": "portals"
+    },
+    {
       "type": "translations",
       "path": "frontend/locale/en-US.json",
       "id": "locale/en-US"

@@ -9,6 +9,7 @@ const cartButtonIconSize = variables.big;
 
 const buttons = css({
   position: 'absolute',
+  top: '0px',
   right: variables.gap.small,
   transform: 'translate3d(0, -60%, 0)',
   display: 'flex',
