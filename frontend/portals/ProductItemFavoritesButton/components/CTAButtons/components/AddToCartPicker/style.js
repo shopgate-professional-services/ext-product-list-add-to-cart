@@ -1,16 +1,22 @@
 import { css } from 'glamor';
+import { themeConfig } from '@shopgate/pwa-common/helpers/config';
+
+const { shadows } = themeConfig;
+
+const picker = css({
+  display: 'flex',
+});
 
 const addToCartShadow = css({
-  display: 'absolute',
-  boxShadow: ' 0 4px 8px rgba(0, 0, 0, 0.25) !important',
+  boxShadow: shadows.buttons.elevated,
 }).toString();
 
 const noShadow = css({
-  display: 'absolute',
-  boxShadow: '0 3px 4px rgba(0, 0, 0, 0.13)',
+  boxShadow: shadows.buttons.disabled,
 });
 
 export default {
+  picker,
   addToCartShadow,
   noShadow,
 };

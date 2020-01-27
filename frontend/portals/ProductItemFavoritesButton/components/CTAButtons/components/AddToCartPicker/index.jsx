@@ -166,6 +166,7 @@ class AddToCartPicker extends Component {
         items={pickerItems}
         listComponent={this.listComponent}
         onSelect={this.handelAddToCart}
+        className={styles.picker}
       />
     );
   }

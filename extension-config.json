@@ -1,11 +1,17 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "id": "@shopgate-project/product-list-add-to-cart",
   "components": [
     {
       "id": "ProductItemFavoritesButton",
       "path": "frontend/portals/ProductItemFavoritesButton/index.jsx",
       "target": "product-item.favorites-button",
+      "type": "portals"
+    },
+    {
+      "id": "ProductItemName",
+      "path": "frontend/portals/ProductItemName/index.jsx",
+      "target": "product-item.name",
       "type": "portals"
     },
     {
@@ -21,10 +27,12 @@
   ],
   "configuration": {
     "maxEntries": {
-      "type": "static",
+      "type": "admin",
       "destination": "frontend",
+      "default": 30,
       "params": {
-        "value": 30
+        "label": "Quantity selection picker max value",
+        "type": "number"
       }
     }
   }
