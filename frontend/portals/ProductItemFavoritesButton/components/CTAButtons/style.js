@@ -11,7 +11,7 @@ const buttons = css({
   position: 'absolute',
   top: '0px',
   right: variables.gap.small,
-  transform: 'translate3d(0, -60%, 0)',
+  transform: 'translate3d(0, calc(-60% - 6px), 0)', // -6px of after image gap
   display: 'flex',
   justifyContent: 'flex-end',
   alignItems: 'center',
