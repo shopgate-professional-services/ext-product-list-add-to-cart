@@ -1,5 +1,5 @@
 {
-  "version": "1.0.2",
+  "version": "1.0.3",
   "id": "@shopgate-project/product-list-add-to-cart",
   "components": [
     {
@@ -9,9 +9,9 @@
       "type": "portals"
     },
     {
-      "id": "ProductItemName",
-      "path": "frontend/portals/ProductItemName/index.jsx",
-      "target": "product-item.name",
+      "id": "ProductItemImageAfterGap",
+      "path": "frontend/portals/ProductItemImageAfterGap.jsx",
+      "target": "product-item.image.after",
       "type": "portals"
     },
     {
