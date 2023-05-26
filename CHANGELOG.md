@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## Unreleased
 
+## [1.0.4] - 2023-05-26
+### Added
+- Added a Portal for the product-list-add-to-cart picker.
+
 ## [1.0.3] - 2020-04-15
 ### Fixed
 - bottom margin of add to cart button
