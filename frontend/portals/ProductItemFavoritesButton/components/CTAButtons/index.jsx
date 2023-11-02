@@ -27,14 +27,14 @@ const CTAButtons = (props) => {
         rippleClassName={styles.ripple}
       />
       <Fragment>
-        <Portal name="product-item.add-to-cart-picker.before" props={null} />
-        <Portal name="product-item.add-to-cart-picker" props={null}>
+        <Portal name="product-item.add-to-cart-picker.before" />
+        <Portal name="product-item.add-to-cart-picker">
           <AddToCartPicker
             {...props}
             buttonProps={addToCartButtonProps}
           />
         </Portal>
-        <Portal name="product-item.add-to-cart-picker.after" props={null} />
+        <Portal name="product-item.add-to-cart-picker.after" />
       </Fragment>
     </div>
   );
