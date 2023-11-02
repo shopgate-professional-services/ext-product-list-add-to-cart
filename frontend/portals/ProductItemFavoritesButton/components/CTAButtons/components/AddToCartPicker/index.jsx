@@ -99,7 +99,7 @@ class AddToCartPicker extends Component {
     if (modalInfo.length > 0) {
       showModal({
         message: modalInfo,
-        confirm: 'product_list_add_to_cartmodalInfo.confirm',
+        confirm: 'product_list_add_to_cart.modalInfo.confirm',
         dismiss: 'product_list_add_to_cart.modalInfo.cancel',
       })
         .then((result) => {

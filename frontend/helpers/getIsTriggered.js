@@ -4,7 +4,7 @@
  * @returns {boolean}
  */
 export const hasTriggerTag = (tags, triggerTags) => {
-  if (!tags) {
+  if (!tags || !triggerTags) {
     return false;
   }
 
@@ -19,7 +19,7 @@ export const hasTriggerTag = (tags, triggerTags) => {
  * @returns {boolean}
  */
 export const hasTriggerProp = (additionalProperties, properties, triggerProps) => {
-  if (!additionalProperties && !properties) {
+  if ((!additionalProperties && !properties) || !triggerProps) {
     return false;
   }
 
@@ -40,12 +40,12 @@ export const hasTriggerProp = (additionalProperties, properties, triggerProps) =
 
 /**
  * @param {Object} productData productDataObject
- * @param {Object} badge config badgeMap info
+ * @param {Object} info config modalMapping info
  * @returns {boolean} should filter
  */
-export const isTriggered = (productData, badge) => {
+export const isTriggered = (productData, info) => {
   const { tags, additionalProperties, properties } = productData || {};
-  const { triggerTags, triggerProps } = badge || {};
+  const { triggerTags, triggerProps } = info || {};
 
   return hasTriggerTag(tags, triggerTags) ||
   hasTriggerProp(additionalProperties, properties, triggerProps);
