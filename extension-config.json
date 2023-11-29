@@ -40,8 +40,8 @@
       "default": [],
       "destination": "frontend",
       "params": {
-        "label": "Mapping for tag and image srcs",
-        "description": "The various tags/properties and src associations for extension. The badge hierarchy for items with multiple trigger tags is determined by array.",
+        "label": "Mapping for tag/property and message",
+        "description": "The various tags/properties and src associations for extension. The modal hierarchy for items with multiple trigger tags is determined by array.",
         "type": "json"
       }
     }
