@@ -5,6 +5,10 @@
       "confirm": "Select variants",
       "cancel": "Cancel"
     },
+    "modalInfo": {
+      "confirm": "View Product",
+      "cancel": "cancel"
+    },
     "sheet_title": "Choose Quantity for"
   }
 }

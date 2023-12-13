@@ -1,6 +1,5 @@
 {
   "name": "@shopgate-project/product-list-add-to-cart",
-  "version": "1.0.3",
   "description": "Allows users to add desired quantity from a product grid view.",
   "license": "Apache-2.0",
   "scripts": {

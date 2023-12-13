@@ -5,6 +5,10 @@
       "confirm": "Varianten wählen",
       "cancel": "Abbrechen"
     },
+    "modalInfo": {
+      "confirm": "Zum Produkt",
+      "cancel": "Abbrechen"
+    },
     "sheet_title": "Menge wählen für"
   }
 }

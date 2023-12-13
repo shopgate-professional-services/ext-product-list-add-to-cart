@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Portal } from '@shopgate/engage/components';
 import PropTypes from 'prop-types';
 import FavoritesButton from '@shopgate/pwa-ui-shared/FavoritesButton';
 import AddToCartPicker from './components/AddToCartPicker';
@@ -25,10 +26,16 @@ const CTAButtons = (props) => {
         className={styles.favButton}
         rippleClassName={styles.ripple}
       />
-      <AddToCartPicker
-        {...props}
-        buttonProps={addToCartButtonProps}
-      />
+      <Fragment>
+        <Portal name="product-item.add-to-cart-picker.before" />
+        <Portal name="product-item.add-to-cart-picker">
+          <AddToCartPicker
+            {...props}
+            buttonProps={addToCartButtonProps}
+          />
+        </Portal>
+        <Portal name="product-item.add-to-cart-picker.after" />
+      </Fragment>
     </div>
   );
 };

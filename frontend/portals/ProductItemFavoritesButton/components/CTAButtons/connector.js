@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { isProductOnFavoriteList } from '../../../../selectors';
+import { isProductOnFavoriteList, modalMappingInfo } from '../../../../selectors';
 
 /**
  * Maps the contents of the state to the component props.
@@ -9,6 +9,7 @@ import { isProductOnFavoriteList } from '../../../../selectors';
  */
 const mapStateToProps = (state, props) => ({
   isFavorite: isProductOnFavoriteList(state, props),
+  modalInfo: modalMappingInfo(state, props),
 });
 
 export default connect(mapStateToProps);

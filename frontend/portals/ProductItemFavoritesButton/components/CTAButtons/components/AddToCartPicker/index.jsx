@@ -22,6 +22,7 @@ class AddToCartPicker extends Component {
     handleAddToCart: PropTypes.func,
     isOrderable: PropTypes.bool,
     isSimpleProduct: PropTypes.bool,
+    modalInfo: PropTypes.arrayOf(PropTypes.string),
     productName: PropTypes.string,
     showModal: PropTypes.func,
     stock: PropTypes.shape(),
@@ -32,6 +33,7 @@ class AddToCartPicker extends Component {
     handleAddToCart: () => { },
     isOrderable: true,
     isSimpleProduct: false,
+    modalInfo: null,
     productName: null,
     showModal: () => Promise().resolve(true),
     stock: null,
@@ -89,9 +91,22 @@ class AddToCartPicker extends Component {
    */
   validateProduct = () => {
     const {
-      isOrderable, isSimpleProduct, showModal, goToProductPage,
+      isOrderable, isSimpleProduct, showModal, goToProductPage, modalInfo,
     } = this.props;
     if (!isOrderable) {
+      return false;
+    }
+    if (modalInfo.length > 0) {
+      showModal({
+        message: modalInfo,
+        confirm: 'product_list_add_to_cart.modalInfo.confirm',
+        dismiss: 'product_list_add_to_cart.modalInfo.cancel',
+      })
+        .then((result) => {
+          if (result) {
+            goToProductPage();
+          }
+        });
       return false;
     }
     if (!isSimpleProduct) {
