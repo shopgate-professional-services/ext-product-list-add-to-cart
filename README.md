@@ -14,12 +14,28 @@ Add the Terms and conditions extension to your Shopgate Connect deployment confi
 (...)
 ```
 
-#### modalMapping:
+Set the following values in your Shopgate Connect Admin:
+* maxEntries - (number) specified number of quantity values to show in list modal. Default is 30.
+
+If stock is less then maxEntries then stock amount will be used for number of quantity values.
+
+#### Example Config
+```
+  {
+    maxEntries: 30
+  }
+```
+
+
+## modalMapping:
 The configuration modalMapping will be used to determine which product tags or properties are used to denote the need for the associated message to be added to the product list add-to-cart modal.
 
 The modal will be shown with the configured message and the options to redirect to the product detail page or to close the modal.
 
-Example Value:
+#### Important: @shopgate-project/products-properties is required for this feature. 
+
+#### Example config
+
 ```json
 {
   "modalMapping": [
@@ -53,18 +69,6 @@ Example Value:
     }
   ]
 }
-```
-
-Set the following values in your Shopgate Connect Admin:
-* maxEntries - (number) specified number of quantity values to show in list modal. Default is 30.
-
-If stock is less then maxEntries then stock amount will be used for number of quantity values.
-
-## Example Config
-```
-  {
-    maxEntries: 30
-  }
 ```
 
 ## Changelog
