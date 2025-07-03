@@ -1,0 +1,14 @@
+{
+  "product_list_add_to_cart": {
+    "modal": {
+      "message": "Om dit product aan uw winkelwagen toe te voegen, selecteert u de varianten.",
+      "confirm": "Varianten selecteren",
+      "cancel": "Annuleren"
+    },
+    "modalInfo": {
+      "confirm": "Ga naar product",
+      "cancel": "Annuleren"
+    },
+    "sheet_title": "Aantal selecteren voor"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "product_list_add_to_cart": {
+    "modal": {
+      "message": "Aby dodać ten produkt do koszyka, proszę wybrać warianty.",
+      "confirm": "Wybierz warianty",
+      "cancel": "Anuluj"
+    },
+    "modalInfo": {
+      "confirm": "Przejdź do produktu",
+      "cancel": "Anuluj"
+    },
+    "sheet_title": "Wybierz ilość dla"
+  }
+}

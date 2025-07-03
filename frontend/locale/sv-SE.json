@@ -1,0 +1,14 @@
+{
+  "product_list_add_to_cart": {
+    "modal": {
+      "message": "För att lägga till denna produkt i varukorgen, vänligen välj varianterna.",
+      "confirm": "Välj varianter",
+      "cancel": "Avbryt"
+    },
+    "modalInfo": {
+      "confirm": "Gå till produkten",
+      "cancel": "Avbryt"
+    },
+    "sheet_title": "Välj antal för"
+  }
+}

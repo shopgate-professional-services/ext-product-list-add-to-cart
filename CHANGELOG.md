@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.0] - 2025-07-03
+### Added
+- Added css classes for styling
+- Added translations to support more languages
+
 ## [1.1.0] - 2023-05-29
 ### Added
 - Added a Portal for the product-list-add-to-cart picker.
@@ -25,6 +30,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - Add to cart button on product list pages.
 
+[1.2.0]: https://github.com/shopgate-professional-services/ext-product-list-add-to-cart/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/shopgate-professional-services/ext-product-list-add-to-cart/compare/v1.0.3...v1.1.0
 [1.0.3]: https://github.com/shopgate-professional-services/ext-product-list-add-to-cart/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/shopgate-professional-services/ext-product-list-add-to-cart/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/shopgate-professional-services/ext-product-list-add-to-cart/compare/v1.0.0...v1.0.1

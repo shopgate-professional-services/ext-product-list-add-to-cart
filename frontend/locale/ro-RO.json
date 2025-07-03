@@ -1,0 +1,14 @@
+{
+  "product_list_add_to_cart": {
+    "modal": {
+      "message": "Pentru a adăuga acest produs în coș, vă rugăm să selectați variantele.",
+      "confirm": "Selectați variantele",
+      "cancel": "Anulați"
+    },
+    "modalInfo": {
+      "confirm": "Mergeți la produs",
+      "cancel": "Anulați"
+    },
+    "sheet_title": "Selectați cantitatea pentru"
+  }
+}
