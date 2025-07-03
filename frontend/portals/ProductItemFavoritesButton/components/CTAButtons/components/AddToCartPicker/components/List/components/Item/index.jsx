@@ -35,7 +35,7 @@ class Item extends Component {
   /**
    * Should only update what the `selected` or `disabled` props change.
    * @param {Object} nextProps The next set of component props.
-   * @returns {JSX}
+   * @returns {boolean}
    */
   shouldComponentUpdate(nextProps) {
     return (
@@ -46,7 +46,7 @@ class Item extends Component {
 
   /**
    * Renders the bulk of the content.
-   * @returns {JSX}
+   * @returns {JSX.Element}
    */
   renderContent() {
     const { isDisabled, isSelected, title } = this.props;
@@ -85,7 +85,7 @@ class Item extends Component {
 
   /**
    * Renders the component.
-   * @returns {JSX}
+   * @returns {JSX.Element}
    */
   render() {
     /**

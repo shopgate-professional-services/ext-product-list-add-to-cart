@@ -26,7 +26,7 @@ const mapStateToProps = (state, props) => ({
 
 /**
  * Connect the dispatch function to a callable function in props.
- * @param {Funcion} dispatch The redux dispatch function.
+ * @param {Function} dispatch The redux dispatch function.
  * @param {string} productId productId for given card in product list
  * @returns {Object}
  */

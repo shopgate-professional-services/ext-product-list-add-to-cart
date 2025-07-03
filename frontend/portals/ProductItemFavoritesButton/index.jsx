@@ -4,7 +4,7 @@ import CTAButtons from './components/CTAButtons';
 /**
  * Renders CTA buttons in product-item.favorites-button portal
  * @param {Object} props props
- * @returns {JSX}
+ * @returns {JSX.Element}
  */
 const ProductItemFavoritesButton = props => (<CTAButtons {...props} />);
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import BasePicker from '@shopgate/pwa-common/components/Picker';
+import { Picker } from '@shopgate/engage/components';
 import Sheet from '@shopgate/pwa-ui-shared/Sheet';
 import Conditioner from '@shopgate/pwa-core/classes/Conditioner';
 import AddToCartPickerButton from './components/AddToCartPickerButton';
@@ -126,7 +126,7 @@ class AddToCartPicker extends Component {
   }
 
   /**
-   * @returns {JSX}
+   * @returns {JSX.Element}
    */
   listComponent = ({ items, onSelect, onClose }) => (
     <List>
@@ -147,7 +147,7 @@ class AddToCartPicker extends Component {
 
   /**
    * @param {Object} modalProps Props for modal
-   * @returns {JSX}
+   * @returns {JSX.Element}
    */
   modalComponent = (modalProps) => {
     const { __ } = this.context.i18n();
@@ -169,12 +169,12 @@ class AddToCartPicker extends Component {
 
   /**
    * Renders the component.
-   * @returns {JSX}
+   * @returns {JSX.Element}
    */
   render() {
     const pickerItems = createPickerItems(this.props.stock, maxEntries);
     return (
-      <BasePicker
+      <Picker
         modalComponent={this.modalComponent}
         buttonProps={this.buttonProps}
         buttonComponent={AddToCartPickerButton}

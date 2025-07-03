@@ -104,6 +104,15 @@
         "description": "The various tags/properties and src associations for extension. The modal hierarchy for items with multiple trigger tags is determined by array.",
         "type": "json"
       }
+    },
+    "addFirstVariantToCart": {
+      "type": "admin",
+      "default": false,
+      "destination": "frontend",
+      "params": {
+        "label": "Adds first available variant to cart",
+        "type": "json"
+      }
     }
   }
 }
