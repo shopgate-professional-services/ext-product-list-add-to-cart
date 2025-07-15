@@ -4,9 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.2.0] - 2025-07-03
+## [1.2.0] - 2025-07-15
 ### Added
 - Added css classes for styling
+- Added an extension config "addFirstVariantToCart" to add the first available product variant to the cart
 - Added translations to support more languages
 
 ## [1.1.0] - 2023-05-29

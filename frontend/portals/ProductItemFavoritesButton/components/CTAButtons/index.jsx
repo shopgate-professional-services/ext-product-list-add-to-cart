@@ -19,7 +19,7 @@ const CTAButtons = (props) => {
   };
 
   return (
-    <div className={styles.buttons}>
+    <div className={`${styles.buttons} product-list__buttons`}>
       <FavoritesButton
         active={props.isFavorite}
         productId={props.productId}

@@ -111,7 +111,7 @@
       "destination": "frontend",
       "params": {
         "label": "Adds first available variant to cart",
-        "type": "json"
+        "type": "checkbox"
       }
     }
   }

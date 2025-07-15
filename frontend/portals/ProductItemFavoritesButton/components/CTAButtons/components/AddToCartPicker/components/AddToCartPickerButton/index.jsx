@@ -126,7 +126,7 @@ class AddToCartButton extends Component {
 
   /**
    * Renders the component
-   * @returns {JSX}
+   * @returns {JSX.Element}
    */
   render() {
     // Set initial base styles
@@ -206,7 +206,7 @@ class AddToCartButton extends Component {
     return (
       <button
         data-test-id="addToCartButton"
-        className={`${this.props.className} ${className} ${buttonStyle}`}
+        className={`${this.props.className} ${className} ${buttonStyle} product-list__add-to-cart-button`}
         onClick={this.handleClick}
         aria-hidden={this.props['aria-hidden']}
         aria-label={this.props['aria-label']}
