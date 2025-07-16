@@ -10,7 +10,7 @@ import createPickerItems from '../../../../../../helpers/createPickerItems';
 import styles from './style';
 import getConfig from '../../../../../../helpers/getConfig';
 
-const { maxEntries } = getConfig();
+const { maxEntries, addFirstVariantToCart } = getConfig();
 const clickDelay = 150;
 
 /**
@@ -18,6 +18,8 @@ const clickDelay = 150;
  */
 class AddToCartPicker extends Component {
   static propTypes = {
+    cachedProduct: PropTypes.shape(),
+    fetchVariants: PropTypes.func,
     goToProductPage: PropTypes.func,
     handleAddToCart: PropTypes.func,
     isOrderable: PropTypes.bool,
@@ -29,9 +31,11 @@ class AddToCartPicker extends Component {
   }
 
   static defaultProps = {
+    fetchVariants: () => { },
     goToProductPage: () => { },
     handleAddToCart: () => { },
     isOrderable: true,
+    cachedProduct: null,
     isSimpleProduct: false,
     modalInfo: null,
     productName: null,
@@ -96,6 +100,10 @@ class AddToCartPicker extends Component {
     if (!isOrderable) {
       return false;
     }
+
+    if (addFirstVariantToCart && isOrderable && !isSimpleProduct) {
+      return true;
+    }
     if (modalInfo.length > 0) {
       showModal({
         message: modalInfo,
@@ -156,15 +164,43 @@ class AddToCartPicker extends Component {
   }
 
   /**
-   * Function to handle cart
+   * Function to handle products added to cart
    * @param {number} quantity quantity selected.
    */
-  handelAddToCart = (quantity) => {
-    this.props.handleAddToCart(quantity);
+  onAddToCart = async (quantity) => {
+    const {
+      isOrderable, isSimpleProduct, fetchVariants, handleAddToCart, cachedProduct,
+    } = this.props;
+    if (addFirstVariantToCart && isOrderable && !isSimpleProduct) {
+      try {
+        const cachedVariantId = cachedProduct ? cachedProduct.variants?.products[0].id : null;
 
-    this.setState(prevState => ({
-      addedQuantity: prevState.addedQuantity + quantity,
-    }));
+        const variants = await fetchVariants();
+
+        // case 1: product variant request has not been done before
+        if (variants) {
+          const variantId = variants.products[0].id;
+          handleAddToCart(quantity, variantId);
+          this.setState(prevState => ({
+            addedQuantity: prevState.addedQuantity + quantity,
+          }));
+        }
+        // case 2: product variant request has been done before and variants were cached
+        if (!variants && cachedVariantId) {
+          handleAddToCart(quantity, cachedVariantId);
+          this.setState(prevState => ({
+            addedQuantity: prevState.addedQuantity + quantity,
+          }));
+        }
+      } catch (error) {
+        console.error('Failed to fetch variants:', error);
+      }
+    } else {
+      handleAddToCart(quantity);
+      this.setState(prevState => ({
+        addedQuantity: prevState.addedQuantity + quantity,
+      }));
+    }
   };
 
   /**
@@ -180,7 +216,7 @@ class AddToCartPicker extends Component {
         buttonComponent={AddToCartPickerButton}
         items={pickerItems}
         listComponent={this.listComponent}
-        onSelect={this.handelAddToCart}
+        onSelect={this.onAddToCart}
         className={styles.picker}
       />
     );

@@ -9,6 +9,7 @@ import showModal from '@shopgate/pwa-common/actions/modal/showModal';
 import { historyPush } from '@shopgate/pwa-common/actions/router';
 import { ITEM_PATH } from '@shopgate/pwa-common-commerce/product/constants';
 import { bin2hex } from '@shopgate/pwa-common/helpers/data';
+import { fetchProductVariants } from '@shopgate/engage/product';
 import { getProductName } from '../../../../../../selectors';
 
 /**
@@ -22,6 +23,7 @@ const mapStateToProps = (state, props) => ({
   isSimpleProduct: !hasProductVariety(state, props),
   isOrderable: isProductOrderable(state, props),
   stock: getProductStock(state, props),
+  cachedProduct: state.product.variantsByProductId[props.productId],
 });
 
 /**
@@ -31,15 +33,16 @@ const mapStateToProps = (state, props) => ({
  * @returns {Object}
  */
 const mapDispatchToProps = (dispatch, { productId }) => ({
-  handleAddToCart: quantity => (
+  handleAddToCart: (quantity, variantId) => (
     dispatch(addProductsToCart([{
-      quantity, productId,
+      quantity, productId: variantId || productId,
     }]))
   ),
   showModal: options => dispatch(showModal(options)),
   goToProductPage: () => (
     dispatch(historyPush({ pathname: `${ITEM_PATH}/${bin2hex(productId)}` }))
   ),
+  fetchVariants: () => dispatch(fetchProductVariants(productId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps);
