@@ -45,6 +45,18 @@ class Item extends Component {
   }
 
   /**
+   * Click handler for the item.
+   * @param {Object} event The tap event
+   */
+  handleKeyPress = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.props.onClick(event);
+    }
+  };
+
+  /**
+  /**
    * Renders the bulk of the content.
    * @returns {JSX.Element}
    */
@@ -111,7 +123,13 @@ class Item extends Component {
     }
 
     return (
-      <div aria-hidden onClick={this.props.onClick} data-test-id={this.props.testId}>
+      <div
+        tabIndex={0}
+        role="button"
+        onKeyDown={this.handleKeyPress}
+        onClick={this.props.onClick}
+        data-test-id={this.props.testId}
+      >
         <Glow className={this.props.className}>
           {this.renderContent()}
         </Glow>

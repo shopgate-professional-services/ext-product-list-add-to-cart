@@ -5,7 +5,7 @@ const { shadows } = themeConfig;
 
 const picker = css({
   display: 'flex',
-});
+}).toString();
 
 const addToCartShadow = css({
   boxShadow: shadows.buttons.elevated,

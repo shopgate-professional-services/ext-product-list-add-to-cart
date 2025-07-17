@@ -18,7 +18,7 @@ const clickDelay = 150;
  */
 class AddToCartPicker extends Component {
   static propTypes = {
-    cachedProduct: PropTypes.shape(),
+    cachedVariants: PropTypes.shape(),
     fetchVariants: PropTypes.func,
     goToProductPage: PropTypes.func,
     handleAddToCart: PropTypes.func,
@@ -35,7 +35,7 @@ class AddToCartPicker extends Component {
     goToProductPage: () => { },
     handleAddToCart: () => { },
     isOrderable: true,
-    cachedProduct: null,
+    cachedVariants: null,
     isSimpleProduct: false,
     modalInfo: null,
     productName: null,
@@ -70,7 +70,7 @@ class AddToCartPicker extends Component {
       isDisabled: !this.props.isOrderable,
       conditioner: this.productConditioner,
       addedQuantity: this.state.addedQuantity,
-      handleAddToCart: /* istanbul ignore next */ () => { },
+      handleAddToCart: () => { },
       onClick: () => { },
       isLoading: false,
       hasLoading: true,
@@ -101,9 +101,6 @@ class AddToCartPicker extends Component {
       return false;
     }
 
-    if (addFirstVariantToCart && isOrderable && !isSimpleProduct) {
-      return true;
-    }
     if (modalInfo.length > 0) {
       showModal({
         message: modalInfo,
@@ -117,6 +114,11 @@ class AddToCartPicker extends Component {
         });
       return false;
     }
+
+    if (addFirstVariantToCart && isOrderable && !isSimpleProduct) {
+      return true;
+    }
+
     if (!isSimpleProduct) {
       showModal({
         message: 'product_list_add_to_cart.modal.message',
@@ -169,11 +171,11 @@ class AddToCartPicker extends Component {
    */
   onAddToCart = async (quantity) => {
     const {
-      isOrderable, isSimpleProduct, fetchVariants, handleAddToCart, cachedProduct,
+      isOrderable, isSimpleProduct, fetchVariants, handleAddToCart, cachedVariants,
     } = this.props;
     if (addFirstVariantToCart && isOrderable && !isSimpleProduct) {
       try {
-        const cachedVariantId = cachedProduct ? cachedProduct.variants?.products[0].id : null;
+        const cachedVariantId = cachedVariants ? cachedVariants.variants?.products[0].id : null;
 
         const variants = await fetchVariants();
 

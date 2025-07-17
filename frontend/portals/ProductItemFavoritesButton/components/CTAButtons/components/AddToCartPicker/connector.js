@@ -23,7 +23,7 @@ const mapStateToProps = (state, props) => ({
   isSimpleProduct: !hasProductVariety(state, props),
   isOrderable: isProductOrderable(state, props),
   stock: getProductStock(state, props),
-  cachedProduct: state.product.variantsByProductId[props.productId],
+  cachedVariants: state.product.variantsByProductId[props.productId],
 });
 
 /**

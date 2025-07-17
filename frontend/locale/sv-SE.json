@@ -9,6 +9,7 @@
       "confirm": "Gå till produkten",
       "cancel": "Avbryt"
     },
-    "sheet_title": "Välj antal för"
+    "sheet_title": "Välj antal för",
+    "addToCart_button": "Lägg till i kundvagnen"
   }
 }

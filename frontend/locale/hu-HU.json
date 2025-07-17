@@ -9,6 +9,7 @@
       "confirm": "Ugrás a termékhez",
       "cancel": "Mégse"
     },
-    "sheet_title": "Válassza ki a mennyiséget ehhez:"
+    "sheet_title": "Válassza ki a mennyiséget ehhez:",
+    "addToCart_button": "Tegye a kosárba"
   }
 }

@@ -9,6 +9,7 @@
       "confirm": "Ir al producto",
       "cancel": "Cancelar"
     },
-    "sheet_title": "Seleccionar cantidad para"
+    "sheet_title": "Seleccionar cantidad para",
+    "addToCart_button": "Añadir al carrito"
   }
 }

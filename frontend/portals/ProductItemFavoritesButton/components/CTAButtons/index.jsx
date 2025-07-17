@@ -10,7 +10,6 @@ import styles from './style';
  * Renders CTA buttons for product listing cards (add to cart + toggle favorites).
  * @param {Object} props The component props.
  * @returns {JSX.Element}
- * @constructor
  */
 const CTAButtons = (props) => {
   const addToCartButtonProps = {

@@ -9,6 +9,7 @@
       "confirm": "Ga naar product",
       "cancel": "Annuleren"
     },
-    "sheet_title": "Aantal selecteren voor"
+    "sheet_title": "Aantal selecteren voor",
+    "addToCart_button": "Toevoegen aan winkelwagen"
   }
 }
