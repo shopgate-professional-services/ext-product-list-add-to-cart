@@ -56,7 +56,6 @@ class Item extends Component {
   };
 
   /**
-  /**
    * Renders the bulk of the content.
    * @returns {JSX.Element}
    */
@@ -76,9 +75,11 @@ class Item extends Component {
 
     return (
       <Grid className={gridStyles} component="div">
+        {this.props.image && (
         <div className={styles.image}>
           {this.props.image}
         </div>
+        )}
         <Grid.Item
           className={titleStyles}
           component="div"

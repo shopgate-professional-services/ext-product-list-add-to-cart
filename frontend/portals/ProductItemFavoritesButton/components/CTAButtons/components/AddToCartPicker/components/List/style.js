@@ -6,7 +6,7 @@ const { colors } = themeConfig;
 const item = css({
   boxShadow: `0 1px 0 0 ${colors.darkGray}`,
   marginBottom: 1,
-  marginLeft: 72,
+  textAlign: 'center',
   ' :last-child': {
     marginBottom: 0,
     boxShadow: 'none',
@@ -19,7 +19,6 @@ const itemNotLast = css({
 }).toString();
 
 const innerContainer = css({
-  marginLeft: -72,
   minHeight: 56,
   position: 'relative',
 }).toString();
