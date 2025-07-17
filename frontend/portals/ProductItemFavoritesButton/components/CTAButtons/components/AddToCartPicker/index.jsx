@@ -173,36 +173,29 @@ class AddToCartPicker extends Component {
     const {
       isOrderable, isSimpleProduct, fetchVariants, handleAddToCart, cachedVariants,
     } = this.props;
+
+    let variantId;
+
     if (addFirstVariantToCart && isOrderable && !isSimpleProduct) {
-      try {
-        const cachedVariantId = cachedVariants ? cachedVariants.variants?.products[0].id : null;
+      // Try to get the variant ID from the cache
+      variantId = cachedVariants?.variants?.products?.[0]?.id;
 
-        const variants = await fetchVariants();
-
-        // case 1: product variant request has not been done before
-        if (variants) {
-          const variantId = variants.products[0].id;
-          handleAddToCart(quantity, variantId);
-          this.setState(prevState => ({
-            addedQuantity: prevState.addedQuantity + quantity,
-          }));
+      // If not found in cache, fetch the variants and get the id of the first variant
+      if (!variantId) {
+        try {
+          const variants = await fetchVariants();
+          variantId = variants?.products?.[0]?.id;
+        } catch (error) {
+          console.error('Failed to fetch variants:', error);
         }
-        // case 2: product variant request has been done before and variants were cached
-        if (!variants && cachedVariantId) {
-          handleAddToCart(quantity, cachedVariantId);
-          this.setState(prevState => ({
-            addedQuantity: prevState.addedQuantity + quantity,
-          }));
-        }
-      } catch (error) {
-        console.error('Failed to fetch variants:', error);
       }
-    } else {
-      handleAddToCart(quantity);
-      this.setState(prevState => ({
-        addedQuantity: prevState.addedQuantity + quantity,
-      }));
     }
+
+    handleAddToCart(quantity, variantId);
+
+    this.setState(prev => ({
+      addedQuantity: prev.addedQuantity + quantity,
+    }));
   };
 
   /**
