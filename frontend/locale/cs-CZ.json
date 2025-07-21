@@ -1,0 +1,15 @@
+{
+  "product_list_add_to_cart": {
+    "modal": {
+      "message": "Chcete-li tento produkt přidat do košíku, vyberte prosím varianty.",
+      "confirm": "Vybrat varianty",
+      "cancel": "Zrušit"
+    },
+    "modalInfo": {
+      "confirm": "Přejít na produkt",
+      "cancel": "Zrušit"
+    },
+    "sheet_title": "Zvolte množství pro",
+    "addToCart_button": "Přidat do košíku"
+  }
+}

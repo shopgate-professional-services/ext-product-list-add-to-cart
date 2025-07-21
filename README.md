@@ -1,9 +1,9 @@
 # ext-product-list-add-to-cart
 
-Frontend Extension which will add a add to cart button to product list views. Extension can be configured to limit the amount of quanitity values shown in list modal.
+Frontend Extension which will add an add to cart button to product list views. Extension can be configured to limit the amount of quantity values shown in list modal.
 
 ## Configuration
-Add the Terms and conditions extension to your Shopgate Connect deployment config. 
+Add the Terms and conditions extension to your Shopgate Connect deployment config.
 
 ```
 (...)
@@ -17,7 +17,7 @@ Add the Terms and conditions extension to your Shopgate Connect deployment confi
 Set the following values in your Shopgate Connect Admin:
 * maxEntries - (number) specified number of quantity values to show in list modal. Default is 30.
 
-If stock is less then maxEntries then stock amount will be used for number of quantity values.
+If stock is less than maxEntries then stock amount will be used for number of quantity values.
 
 #### Example Config
 ```
@@ -32,7 +32,7 @@ The configuration modalMapping will be used to determine which product tags or p
 
 The modal will be shown with the configured message and the options to redirect to the product detail page or to close the modal.
 
-#### Important: @shopgate-project/products-properties is required for this feature. 
+#### Important: @shopgate-project/products-properties is required for this feature.
 
 #### Example config
 

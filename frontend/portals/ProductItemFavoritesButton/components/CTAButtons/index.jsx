@@ -9,8 +9,7 @@ import styles from './style';
 /**
  * Renders CTA buttons for product listing cards (add to cart + toggle favorites).
  * @param {Object} props The component props.
- * @returns {JSX}
- * @constructor
+ * @returns {JSX.Element}
  */
 const CTAButtons = (props) => {
   const addToCartButtonProps = {
@@ -19,7 +18,7 @@ const CTAButtons = (props) => {
   };
 
   return (
-    <div className={styles.buttons}>
+    <div className={`${styles.buttons} product-list__buttons`}>
       <FavoritesButton
         active={props.isFavorite}
         productId={props.productId}

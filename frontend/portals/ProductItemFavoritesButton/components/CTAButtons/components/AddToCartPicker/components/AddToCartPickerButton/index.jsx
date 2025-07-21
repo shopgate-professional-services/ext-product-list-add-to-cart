@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { themeConfig } from '@shopgate/pwa-common/helpers/config';
 import { CartPlusIcon, IndicatorCircle, TickIcon } from '@shopgate/engage/components';
+import { i18n } from '@shopgate/engage/core/helpers';
 import styles from './style';
 
 /**
@@ -126,7 +127,7 @@ class AddToCartButton extends Component {
 
   /**
    * Renders the component
-   * @returns {JSX}
+   * @returns {JSX.Element}
    */
   render() {
     // Set initial base styles
@@ -206,10 +207,10 @@ class AddToCartButton extends Component {
     return (
       <button
         data-test-id="addToCartButton"
-        className={`${this.props.className} ${className} ${buttonStyle}`}
+        className={`${this.props.className} ${className} ${buttonStyle} product-list__add-to-cart-button`}
         onClick={this.handleClick}
         aria-hidden={this.props['aria-hidden']}
-        aria-label={this.props['aria-label']}
+        aria-label={this.props['aria-label'] || i18n.text('product_list_add_to_cart.addToCart_button')}
         ref={this.props.forwardedRef}
         type="button"
       >

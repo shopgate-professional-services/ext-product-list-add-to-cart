@@ -1,0 +1,15 @@
+{
+  "product_list_add_to_cart": {
+    "modal": {
+      "message": "A termék kosárba helyezéséhez kérjük, válassza ki a változatokat.",
+      "confirm": "Változatok kiválasztása",
+      "cancel": "Mégse"
+    },
+    "modalInfo": {
+      "confirm": "Ugrás a termékhez",
+      "cancel": "Mégse"
+    },
+    "sheet_title": "Válassza ki a mennyiséget ehhez:",
+    "addToCart_button": "Tegye a kosárba"
+  }
+}

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import BasePicker from '@shopgate/pwa-common/components/Picker';
+import { Picker } from '@shopgate/engage/components';
 import Sheet from '@shopgate/pwa-ui-shared/Sheet';
 import Conditioner from '@shopgate/pwa-core/classes/Conditioner';
+import { broadcastLiveMessage } from '@shopgate/engage/a11y';
 import AddToCartPickerButton from './components/AddToCartPickerButton';
 import List from './components/List';
 import connect from './connector';
@@ -10,7 +11,7 @@ import createPickerItems from '../../../../../../helpers/createPickerItems';
 import styles from './style';
 import getConfig from '../../../../../../helpers/getConfig';
 
-const { maxEntries } = getConfig();
+const { maxEntries, addFirstVariantToCart } = getConfig();
 const clickDelay = 150;
 
 /**
@@ -18,6 +19,8 @@ const clickDelay = 150;
  */
 class AddToCartPicker extends Component {
   static propTypes = {
+    cachedVariants: PropTypes.shape(),
+    fetchVariants: PropTypes.func,
     goToProductPage: PropTypes.func,
     handleAddToCart: PropTypes.func,
     isOrderable: PropTypes.bool,
@@ -29,9 +32,11 @@ class AddToCartPicker extends Component {
   }
 
   static defaultProps = {
+    fetchVariants: () => { },
     goToProductPage: () => { },
     handleAddToCart: () => { },
     isOrderable: true,
+    cachedVariants: null,
     isSimpleProduct: false,
     modalInfo: null,
     productName: null,
@@ -66,7 +71,7 @@ class AddToCartPicker extends Component {
       isDisabled: !this.props.isOrderable,
       conditioner: this.productConditioner,
       addedQuantity: this.state.addedQuantity,
-      handleAddToCart: /* istanbul ignore next */ () => { },
+      handleAddToCart: () => { },
       onClick: () => { },
       isLoading: false,
       hasLoading: true,
@@ -96,6 +101,7 @@ class AddToCartPicker extends Component {
     if (!isOrderable) {
       return false;
     }
+
     if (modalInfo.length > 0) {
       showModal({
         message: modalInfo,
@@ -109,6 +115,11 @@ class AddToCartPicker extends Component {
         });
       return false;
     }
+
+    if (addFirstVariantToCart && isOrderable && !isSimpleProduct) {
+      return true;
+    }
+
     if (!isSimpleProduct) {
       showModal({
         message: 'product_list_add_to_cart.modal.message',
@@ -126,7 +137,7 @@ class AddToCartPicker extends Component {
   }
 
   /**
-   * @returns {JSX}
+   * @returns {JSX.Element}
    */
   listComponent = ({ items, onSelect, onClose }) => (
     <List>
@@ -147,7 +158,7 @@ class AddToCartPicker extends Component {
 
   /**
    * @param {Object} modalProps Props for modal
-   * @returns {JSX}
+   * @returns {JSX.Element}
    */
   modalComponent = (modalProps) => {
     const { __ } = this.context.i18n();
@@ -156,31 +167,56 @@ class AddToCartPicker extends Component {
   }
 
   /**
-   * Function to handle cart
+   * Function to handle products added to cart
    * @param {number} quantity quantity selected.
    */
-  handelAddToCart = (quantity) => {
-    this.props.handleAddToCart(quantity);
+  onAddToCart = async (quantity) => {
+    const {
+      isOrderable, isSimpleProduct, fetchVariants, handleAddToCart, cachedVariants,
+    } = this.props;
 
-    this.setState(prevState => ({
-      addedQuantity: prevState.addedQuantity + quantity,
+    let variantId;
+
+    if (addFirstVariantToCart && isOrderable && !isSimpleProduct) {
+      // Try to get the variant ID from the cache
+      variantId = cachedVariants?.variants?.products?.[0]?.id;
+
+      // If not found in cache, fetch the variants and get the id of the first variant
+      if (!variantId) {
+        try {
+          const variants = await fetchVariants();
+          variantId = variants?.products?.[0]?.id;
+        } catch (error) {
+          console.error('Failed to fetch variants:', error);
+        }
+      }
+    }
+
+    handleAddToCart(quantity, variantId);
+
+    broadcastLiveMessage('product.adding_item', {
+      params: { count: quantity },
+    });
+
+    this.setState(prev => ({
+      addedQuantity: prev.addedQuantity + quantity,
     }));
   };
 
   /**
    * Renders the component.
-   * @returns {JSX}
+   * @returns {JSX.Element}
    */
   render() {
     const pickerItems = createPickerItems(this.props.stock, maxEntries);
     return (
-      <BasePicker
+      <Picker
         modalComponent={this.modalComponent}
         buttonProps={this.buttonProps}
         buttonComponent={AddToCartPickerButton}
         items={pickerItems}
         listComponent={this.listComponent}
-        onSelect={this.handelAddToCart}
+        onSelect={this.onAddToCart}
         className={styles.picker}
       />
     );

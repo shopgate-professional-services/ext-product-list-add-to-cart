@@ -1,0 +1,15 @@
+{
+  "product_list_add_to_cart": {
+    "modal": {
+      "message": "Lisätäksenne tämän tuotteen ostoskoriin, valitkaa vaihtoehdot.",
+      "confirm": "Valitse vaihtoehdot",
+      "cancel": "Peruuta"
+    },
+    "modalInfo": {
+      "confirm": "Siirry tuotteeseen",
+      "cancel": "Peruuta"
+    },
+    "sheet_title": "Valitse määrä tuotteelle",
+    "addToCart_button": "Lisätkää ostoskoriin"
+  }
+}

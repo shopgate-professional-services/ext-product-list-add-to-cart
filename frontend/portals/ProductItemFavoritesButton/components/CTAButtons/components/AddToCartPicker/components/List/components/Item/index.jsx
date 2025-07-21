@@ -35,7 +35,7 @@ class Item extends Component {
   /**
    * Should only update what the `selected` or `disabled` props change.
    * @param {Object} nextProps The next set of component props.
-   * @returns {JSX}
+   * @returns {boolean}
    */
   shouldComponentUpdate(nextProps) {
     return (
@@ -45,8 +45,19 @@ class Item extends Component {
   }
 
   /**
+   * Click handler for the item.
+   * @param {Object} event The tap event
+   */
+  handleKeyPress = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.props.onClick(event);
+    }
+  };
+
+  /**
    * Renders the bulk of the content.
-   * @returns {JSX}
+   * @returns {JSX.Element}
    */
   renderContent() {
     const { isDisabled, isSelected, title } = this.props;
@@ -64,9 +75,11 @@ class Item extends Component {
 
     return (
       <Grid className={gridStyles} component="div">
+        {this.props.image && (
         <div className={styles.image}>
           {this.props.image}
         </div>
+        )}
         <Grid.Item
           className={titleStyles}
           component="div"
@@ -85,7 +98,7 @@ class Item extends Component {
 
   /**
    * Renders the component.
-   * @returns {JSX}
+   * @returns {JSX.Element}
    */
   render() {
     /**
@@ -111,7 +124,13 @@ class Item extends Component {
     }
 
     return (
-      <div aria-hidden onClick={this.props.onClick} data-test-id={this.props.testId}>
+      <div
+        tabIndex={0}
+        role="button"
+        onKeyDown={this.handleKeyPress}
+        onClick={this.props.onClick}
+        data-test-id={this.props.testId}
+      >
         <Glow className={this.props.className}>
           {this.renderContent()}
         </Glow>
