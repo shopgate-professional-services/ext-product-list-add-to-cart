@@ -70,6 +70,7 @@ class AddToCartPicker extends Component {
       isDisabled: !this.props.isOrderable,
       conditioner: this.productConditioner,
       addedQuantity: this.state.addedQuantity,
+      onAddToCart: this.onAddToCart,
       handleAddToCart: () => { },
       onClick: () => { },
       isLoading: false,

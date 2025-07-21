@@ -4,6 +4,9 @@ import { themeConfig } from '@shopgate/pwa-common/helpers/config';
 import { CartPlusIcon, IndicatorCircle, TickIcon } from '@shopgate/engage/components';
 import { i18n } from '@shopgate/engage/core/helpers';
 import styles from './style';
+import getConfig from '../../../../../../../../helpers/getConfig';
+
+const { useQuantitySheet } = getConfig();
 
 /**
  * AddToCartButton for product cards in grid
@@ -22,6 +25,7 @@ class AddToCartButton extends Component {
     forwardedRef: PropTypes.shape(),
     iconSize: PropTypes.number,
     noShadow: PropTypes.bool,
+    onAddToCart: PropTypes.func,
     onReset: PropTypes.func,
   };
 
@@ -34,6 +38,7 @@ class AddToCartButton extends Component {
     forwardedRef: null,
     iconSize: styles.iconSize,
     noShadow: false,
+    onAddToCart: () => {},
     onReset: () => { },
   };
 
@@ -90,6 +95,7 @@ class AddToCartButton extends Component {
       isLoading,
       conditioner,
       openList,
+      onAddToCart,
     } = this.props;
 
     if (showCheckmark || isLoading || isDisabled) {
@@ -99,6 +105,9 @@ class AddToCartButton extends Component {
     conditioner.check().then((fulfilled) => {
       if (!fulfilled) {
         return false;
+      }
+      if (!useQuantitySheet) {
+        return onAddToCart(1);
       }
       openList();
       return undefined;

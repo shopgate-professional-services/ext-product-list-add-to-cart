@@ -113,6 +113,16 @@
         "label": "Adds first available variant to cart",
         "type": "checkbox"
       }
+    },
+    "useQuantitySheet": {
+      "type": "admin",
+      "default": true,
+      "destination": "frontend",
+      "params": {
+        "label": "Add to cart button opens a sheet to select quantity.",
+        "description": "When add to cart button is clicked, a sheet opens to select quantity. If false, no sheet is displayed and product is added to cart with quantity of 1.",
+        "type": "checkbox"
+      }
     }
   }
 }
