@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Picker } from '@shopgate/engage/components';
 import Sheet from '@shopgate/pwa-ui-shared/Sheet';
 import Conditioner from '@shopgate/pwa-core/classes/Conditioner';
+import { broadcastLiveMessage } from '@shopgate/engage/a11y';
 import AddToCartPickerButton from './components/AddToCartPickerButton';
 import List from './components/List';
 import connect from './connector';
@@ -192,6 +193,10 @@ class AddToCartPicker extends Component {
     }
 
     handleAddToCart(quantity, variantId);
+
+    broadcastLiveMessage('product.adding_item', {
+      params: { count: quantity },
+    });
 
     this.setState(prev => ({
       addedQuantity: prev.addedQuantity + quantity,
