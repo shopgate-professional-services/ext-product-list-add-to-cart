@@ -71,10 +71,9 @@ class AddToCartPicker extends Component {
       isDisabled: !this.props.isOrderable,
       conditioner: this.productConditioner,
       addedQuantity: this.state.addedQuantity,
+      onAddToCart: this.onAddToCart,
       handleAddToCart: () => { },
       onClick: () => { },
-      isLoading: false,
-      hasLoading: true,
       noShadow: false,
       className: null,
       type: 'default',
@@ -209,6 +208,7 @@ class AddToCartPicker extends Component {
    */
   render() {
     const pickerItems = createPickerItems(this.props.stock, maxEntries);
+
     return (
       <Picker
         modalComponent={this.modalComponent}

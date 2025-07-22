@@ -4,6 +4,9 @@ import { themeConfig } from '@shopgate/pwa-common/helpers/config';
 import { CartPlusIcon, IndicatorCircle, TickIcon } from '@shopgate/engage/components';
 import { i18n } from '@shopgate/engage/core/helpers';
 import styles from './style';
+import getConfig from '../../../../../../../../helpers/getConfig';
+
+const { useQuantitySheet } = getConfig();
 
 /**
  * AddToCartButton for product cards in grid
@@ -12,7 +15,6 @@ class AddToCartButton extends Component {
   static propTypes = {
     conditioner: PropTypes.shape().isRequired,
     isDisabled: PropTypes.bool.isRequired,
-    isLoading: PropTypes.bool.isRequired,
     openList: PropTypes.func.isRequired,
     addedQuantity: PropTypes.number,
     'aria-hidden': PropTypes.bool,
@@ -22,6 +24,7 @@ class AddToCartButton extends Component {
     forwardedRef: PropTypes.shape(),
     iconSize: PropTypes.number,
     noShadow: PropTypes.bool,
+    onAddToCart: PropTypes.func,
     onReset: PropTypes.func,
   };
 
@@ -34,6 +37,7 @@ class AddToCartButton extends Component {
     forwardedRef: null,
     iconSize: styles.iconSize,
     noShadow: false,
+    onAddToCart: () => {},
     onReset: () => { },
   };
 
@@ -46,6 +50,7 @@ class AddToCartButton extends Component {
 
     this.state = {
       showCheckmark: null,
+      isLoading: false,
     };
   }
 
@@ -84,21 +89,35 @@ class AddToCartButton extends Component {
    */
   handleClick = (event) => {
     event.stopPropagation();
-    const { showCheckmark } = this.state;
+    const { showCheckmark, isLoading } = this.state;
     const {
       isDisabled,
-      isLoading,
       conditioner,
       openList,
+      onAddToCart,
     } = this.props;
 
     if (showCheckmark || isLoading || isDisabled) {
       return false;
     }
 
-    conditioner.check().then((fulfilled) => {
+    conditioner.check().then(async (fulfilled) => {
       if (!fulfilled) {
         return false;
+      }
+
+      if (!useQuantitySheet) {
+        this.setState({
+          isLoading: true,
+        });
+
+        await onAddToCart(1);
+
+        this.setState({
+          isLoading: false,
+          showCheckmark: true,
+        });
+        return undefined;
       }
       openList();
       return undefined;
@@ -136,8 +155,8 @@ class AddToCartButton extends Component {
     let cartPlusIconStyle = styles.icon;
 
     // Depending on the isLoading prop we only show the spinner or the other way around.
-    const iconOpacity = this.props.isLoading ? { opacity: 0 } : { opacity: 1 };
-    const spinnerInlineStyle = this.props.isLoading ? { opacity: 1 } : { opacity: 0 };
+    const iconOpacity = this.state.isLoading ? { opacity: 0 } : { opacity: 1 };
+    const spinnerInlineStyle = this.state.isLoading ? { opacity: 1 } : { opacity: 0 };
 
     /**
      * The initial positions for the icons:
@@ -153,7 +172,7 @@ class AddToCartButton extends Component {
       ...iconOpacity,
     } : null;
 
-    if (this.props.isDisabled && !this.props.isLoading) {
+    if (this.props.isDisabled && !this.state.isLoading) {
       buttonStyle = styles.buttonDisabled;
     } else if (this.state.showCheckmark) {
       /**
@@ -221,12 +240,12 @@ class AddToCartButton extends Component {
            * favorites when there are many of them.
            */
         }
-        {this.props.isLoading &&
+        {this.state.isLoading &&
           <div className={`${styles.icon} ${styles.spinnerIcon}`} style={spinnerInlineStyle}>
             <IndicatorCircle
               color={themeConfig.colors.primaryContrast}
               strokeWidth={5}
-              paused={!this.props.isLoading}
+              paused={!this.state.isLoading}
             />
           </div>
         }

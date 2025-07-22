@@ -16,13 +16,17 @@ Add the Terms and conditions extension to your Shopgate Connect deployment confi
 
 Set the following values in your Shopgate Connect Admin:
 * maxEntries - (number) specified number of quantity values to show in list modal. Default is 30.
+* addFirstVariantToCart - (boolean) Adds first available variant to cart. Default is false.
+* useQuantitySheet - (boolean) When add to cart button is clicked, a sheet opens to select quantity. If false, no sheet is displayed and product is added to cart with quantity of 1. Default is true.
 
 If stock is less than maxEntries then stock amount will be used for number of quantity values.
 
 #### Example Config
 ```
   {
-    maxEntries: 30
+    maxEntries: 30,
+    addFirstVariantToCart: true,
+    useQuantitySheet: false
   }
 ```
 
