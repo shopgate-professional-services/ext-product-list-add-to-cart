@@ -74,8 +74,6 @@ class AddToCartPicker extends Component {
       onAddToCart: this.onAddToCart,
       handleAddToCart: () => { },
       onClick: () => { },
-      isLoading: false,
-      hasLoading: true,
       noShadow: false,
       className: null,
       type: 'default',
@@ -210,9 +208,6 @@ class AddToCartPicker extends Component {
    */
   render() {
     const pickerItems = createPickerItems(this.props.stock, maxEntries);
-    if (!pickerItems.length) {
-      return null;
-    }
 
     return (
       <Picker
