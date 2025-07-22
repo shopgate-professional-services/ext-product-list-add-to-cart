@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.1] - 2025-07-22
+### Added
+- Added extension config useQuantitySheet to optionally disable the quantity picker sheet
+
 ## [1.2.0] - 2025-07-15
 ### Added
 - Added css classes for styling
@@ -31,6 +35,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - Add to cart button on product list pages.
 
+[1.2.1]: https://github.com/shopgate-professional-services/ext-product-list-add-to-cart/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/shopgate-professional-services/ext-product-list-add-to-cart/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/shopgate-professional-services/ext-product-list-add-to-cart/compare/v1.0.3...v1.1.0
 [1.0.3]: https://github.com/shopgate-professional-services/ext-product-list-add-to-cart/compare/v1.0.2...v1.0.3
