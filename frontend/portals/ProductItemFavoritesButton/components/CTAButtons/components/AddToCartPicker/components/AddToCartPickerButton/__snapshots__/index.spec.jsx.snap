@@ -3,8 +3,8 @@
 exports[`AddToCartPickerButton should render 1`] = `
 <button
   aria-hidden={false}
-  aria-label={null}
-  className="null css-68omm3 css-nil"
+  aria-label="product_list_add_to_cart.addToCart_button"
+  className="null css-68omm3 css-9nc1kp product-list__add-to-cart-button"
   data-test-id="addToCartButton"
   onClick={[Function]}
   type="button"
@@ -12,7 +12,7 @@ exports[`AddToCartPickerButton should render 1`] = `
   <div
     className="css-rukjns"
     style={
-      Object {
+      {
         "opacity": 1,
         "transform": "translate3d(0, 300%, 0)",
       }
@@ -24,7 +24,7 @@ exports[`AddToCartPickerButton should render 1`] = `
     className="css-rukjns"
     onAnimationEnd={[Function]}
     style={
-      Object {
+      {
         "opacity": 1,
         "transform": "translate3d(0, -50%, 0)",
       }

@@ -90,8 +90,7 @@ class Item extends Component {
         {this.props.rightComponent &&
           <Grid.Item component="div" grow={1}>
             {this.props.rightComponent}
-          </Grid.Item>
-        }
+          </Grid.Item>}
       </Grid>
     );
   }

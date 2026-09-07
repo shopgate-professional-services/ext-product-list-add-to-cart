@@ -124,7 +124,7 @@ class AddToCartButton extends Component {
     });
 
     return true;
-  }
+  };
 
   /**
    * Handles the cart animation end event.
@@ -247,8 +247,7 @@ class AddToCartButton extends Component {
               strokeWidth={5}
               paused={!this.state.isLoading}
             />
-          </div>
-        }
+          </div>}
         <div className={tickIconStyle} style={tickInlineStyle}>
           <TickIcon />
         </div>

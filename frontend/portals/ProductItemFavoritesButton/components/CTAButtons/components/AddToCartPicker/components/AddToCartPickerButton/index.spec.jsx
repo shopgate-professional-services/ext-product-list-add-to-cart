@@ -29,7 +29,11 @@ jest.mock('css-spring', () => () => {});
 
 describe('AddToCartPickerButton', () => {
   it('should render', () => {
-    const component = shallow(<AddToCartPickerButton />);
+    const component = shallow(<AddToCartPickerButton
+      isDisabled={false}
+      conditioner={{ check: () => {} }}
+      openList={() => {}}
+    />);
     expect(component).toMatchSnapshot();
   });
 });

@@ -10,7 +10,7 @@ jest.mock('@shopgate/pwa-common/components/Link', () => {
   const Link = () => <div />;
   return Link;
 });
-
+/* eslint-disable react/prop-types */
 jest.mock('@shopgate/pwa-ui-shared/Glow', () => {
   /**
    * Mocked LinkComponent.
@@ -20,6 +20,7 @@ jest.mock('@shopgate/pwa-ui-shared/Glow', () => {
   const Glow = ({ children }) => <div>{children}</div>;
   return Glow;
 });
+/* eslint-enable react/prop-types */
 
 describe('<List.Item />', () => {
   const title = 'My Title';
@@ -62,7 +63,6 @@ describe('<List.Item />', () => {
   it('should render with an onClick element', () => {
     const spy = jest.fn();
 
-    // eslint-disable-next-line require-jsdoc
     const clickHandler = () => {
       /**
        * The spy can't be assigned directly to the event, since the snapshot gets too big

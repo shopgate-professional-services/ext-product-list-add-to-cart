@@ -37,7 +37,13 @@ export const stateWithCurrentProduct = {
   },
   favorites: {
     products: {
-      ids: ['123'],
+      byList: {
+        DEFAULT: {
+          items: [{
+            productId: '123',
+          }],
+        },
+      },
     },
   },
 };
