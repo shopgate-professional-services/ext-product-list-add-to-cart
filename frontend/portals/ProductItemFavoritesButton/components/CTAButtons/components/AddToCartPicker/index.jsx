@@ -54,13 +54,12 @@ class AddToCartPicker extends Component {
    */
   constructor(props) {
     super(props);
+    this.state = {
+      addedQuantity: 0,
+    };
     this.productConditioner = new Conditioner();
     this.productConditioner.addConditioner('validateProduct', this.validateProduct);
   }
-
-  state = {
-    addedQuantity: 0,
-  };
 
   /**
    * Returns the props for the picker button.
@@ -186,6 +185,7 @@ class AddToCartPicker extends Component {
           const variants = await fetchVariants();
           variantId = variants?.products?.[0]?.id;
         } catch (error) {
+          // eslint-disable-next-line no-console
           console.error('Failed to fetch variants:', error);
         }
       }
