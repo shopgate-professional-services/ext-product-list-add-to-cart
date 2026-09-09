@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.3.0] - 2026-09-01
+### Changed
+- The add to cart button now uses the primary theme color instead of the CTA color
+
 ## [1.2.1] - 2025-07-22
 ### Added
 - Added extension config useQuantitySheet to optionally disable the quantity picker sheet
@@ -35,6 +39,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - Add to cart button on product list pages.
 
+
+[1.3.0]: https://github.com/shopgate-professional-services/ext-product-list-add-to-cart/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/shopgate-professional-services/ext-product-list-add-to-cart/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/shopgate-professional-services/ext-product-list-add-to-cart/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/shopgate-professional-services/ext-product-list-add-to-cart/compare/v1.0.3...v1.1.0

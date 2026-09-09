@@ -7,22 +7,22 @@ exports[`<List /> should not render invalid children 1`] = `
     role={null}
   >
     <ul
-      className=""
+      className=" common_list"
       role={null}
     >
       <ListItem
-        className="css-17flzkh"
+        className="css-138yi4n"
         isSelected={false}
         key="child-0/.0"
         role={null}
       >
         <li
-          className="css-1p5q8vq css-17flzkh css-16gj3o1"
+          className="css-138yi4n common__list__list-item sg-9mznus-item-unselected"
           data-test-id="listItem"
           role={null}
         >
           <div
-            className="css-1nnz83b"
+            className="css-1ckzvk7"
           >
             <Item
               className={null}
@@ -41,11 +41,8 @@ exports[`<List /> should not render invalid children 1`] = `
                 wrap={false}
               >
                 <div
-                  className="css-1qcr7hz css-h7r55a"
+                  className="common__grid css-1qcr7hz sg-190r8b9-root-noWrap"
                 >
-                  <div
-                    className="css-jwxytc"
-                  />
                   <GridItem
                     className="css-10fxwvh"
                     component="div"
@@ -53,7 +50,7 @@ exports[`<List /> should not render invalid children 1`] = `
                     shrink={1}
                   >
                     <div
-                      className="css-10fxwvh css-1gs0ko2"
+                      className="sg-xljr6b-root css-10fxwvh"
                     >
                       List Item
                     </div>
@@ -78,22 +75,22 @@ exports[`<List /> should render with two children 1`] = `
     role={null}
   >
     <ul
-      className=""
+      className=" common_list"
       role={null}
     >
       <ListItem
-        className="css-17flzkh"
+        className="css-138yi4n"
         isSelected={false}
         key="child-0/.0"
         role={null}
       >
         <li
-          className="css-1p5q8vq css-17flzkh css-16gj3o1"
+          className="css-138yi4n common__list__list-item sg-9mznus-item-unselected"
           data-test-id="listItem"
           role={null}
         >
           <div
-            className="css-1nnz83b"
+            className="css-1ckzvk7"
           >
             <Item
               className={null}
@@ -112,11 +109,8 @@ exports[`<List /> should render with two children 1`] = `
                 wrap={false}
               >
                 <div
-                  className="css-1qcr7hz css-h7r55a"
+                  className="common__grid css-1qcr7hz sg-190r8b9-root-noWrap"
                 >
-                  <div
-                    className="css-jwxytc"
-                  />
                   <GridItem
                     className="css-10fxwvh"
                     component="div"
@@ -124,7 +118,7 @@ exports[`<List /> should render with two children 1`] = `
                     shrink={1}
                   >
                     <div
-                      className="css-10fxwvh css-1gs0ko2"
+                      className="sg-xljr6b-root css-10fxwvh"
                     >
                       List Item
                     </div>
@@ -136,18 +130,18 @@ exports[`<List /> should render with two children 1`] = `
         </li>
       </ListItem>
       <ListItem
-        className="css-17flzkh"
+        className="css-138yi4n"
         isSelected={false}
         key="child-1/.1"
         role={null}
       >
         <li
-          className="css-1p5q8vq css-17flzkh css-16gj3o1"
+          className="css-138yi4n common__list__list-item sg-9mznus-item-unselected"
           data-test-id="listItem"
           role={null}
         >
           <div
-            className="css-1nnz83b"
+            className="css-1ckzvk7"
           >
             <Item
               className={null}
@@ -166,11 +160,8 @@ exports[`<List /> should render with two children 1`] = `
                 wrap={false}
               >
                 <div
-                  className="css-1qcr7hz css-h7r55a"
+                  className="common__grid css-1qcr7hz sg-190r8b9-root-noWrap"
                 >
-                  <div
-                    className="css-jwxytc"
-                  />
                   <GridItem
                     className="css-10fxwvh"
                     component="div"
@@ -178,7 +169,7 @@ exports[`<List /> should render with two children 1`] = `
                     shrink={1}
                   >
                     <div
-                      className="css-10fxwvh css-1gs0ko2"
+                      className="sg-xljr6b-root css-10fxwvh"
                     >
                       List Item
                     </div>

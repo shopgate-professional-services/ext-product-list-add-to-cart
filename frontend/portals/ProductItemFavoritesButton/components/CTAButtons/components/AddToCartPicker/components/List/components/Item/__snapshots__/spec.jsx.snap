@@ -49,11 +49,8 @@ exports[`<List.Item /> should render with a right component 1`] = `
     wrap={false}
   >
     <div
-      className="css-1qcr7hz css-h7r55a"
+      className="common__grid css-1qcr7hz sg-190r8b9-root-noWrap"
     >
-      <div
-        className="css-jwxytc"
-      />
       <GridItem
         className="css-10fxwvh"
         component="div"
@@ -61,7 +58,7 @@ exports[`<List.Item /> should render with a right component 1`] = `
         shrink={1}
       >
         <div
-          className="css-10fxwvh css-1gs0ko2"
+          className="sg-xljr6b-root css-10fxwvh"
         >
           My Title
         </div>
@@ -73,7 +70,7 @@ exports[`<List.Item /> should render with a right component 1`] = `
         shrink={1}
       >
         <div
-          className=" css-1gs0ko2"
+          className="sg-xljr6b-root"
         >
           <span>
             I\`m a span.
@@ -103,11 +100,8 @@ exports[`<List.Item /> should render with a title but no image 1`] = `
     wrap={false}
   >
     <div
-      className="css-1qcr7hz css-h7r55a"
+      className="common__grid css-1qcr7hz sg-190r8b9-root-noWrap"
     >
-      <div
-        className="css-jwxytc"
-      />
       <GridItem
         className="css-10fxwvh"
         component="div"
@@ -115,7 +109,7 @@ exports[`<List.Item /> should render with a title but no image 1`] = `
         shrink={1}
       >
         <div
-          className="css-10fxwvh css-1gs0ko2"
+          className="sg-xljr6b-root css-10fxwvh"
         >
           My Title
         </div>
@@ -148,7 +142,7 @@ exports[`<List.Item /> should render with an image 1`] = `
     wrap={false}
   >
     <div
-      className="css-1qcr7hz css-h7r55a"
+      className="common__grid css-1qcr7hz sg-190r8b9-root-noWrap"
     >
       <div
         className="css-jwxytc"
@@ -165,7 +159,7 @@ exports[`<List.Item /> should render with an image 1`] = `
         shrink={1}
       >
         <div
-          className="css-10fxwvh css-1gs0ko2"
+          className="sg-xljr6b-root css-10fxwvh"
         >
           My Title
         </div>
@@ -188,9 +182,11 @@ exports[`<List.Item /> should render with an onClick element 1`] = `
   title="My Title"
 >
   <div
-    aria-hidden={true}
     data-test-id={null}
     onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
   >
     <Glow
       className={null}
@@ -202,11 +198,8 @@ exports[`<List.Item /> should render with an onClick element 1`] = `
           wrap={false}
         >
           <div
-            className="css-1qcr7hz css-h7r55a"
+            className="common__grid css-1qcr7hz sg-190r8b9-root-noWrap"
           >
-            <div
-              className="css-jwxytc"
-            />
             <GridItem
               className="css-10fxwvh"
               component="div"
@@ -214,7 +207,7 @@ exports[`<List.Item /> should render with an onClick element 1`] = `
               shrink={1}
             >
               <div
-                className="css-10fxwvh css-1gs0ko2"
+                className="sg-xljr6b-root css-10fxwvh"
               >
                 My Title
               </div>

@@ -27,8 +27,6 @@ jest.mock('@shopgate/engage/components', () => {
   };
 });
 
-jest.mock('css-spring', () => () => {});
-
 const store = createMockStore();
 
 describe('AddToCartPicker', () => {

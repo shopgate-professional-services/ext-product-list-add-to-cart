@@ -2,7 +2,9 @@ import { createSelector } from 'reselect';
 import { getFavoritesProductsIds } from '@shopgate/pwa-common-commerce/favorites/selectors';
 import { getProduct } from '@shopgate/pwa-common-commerce/product/selectors/product';
 import { isTriggered } from '../helpers/getIsTriggered';
-import { modalMapping } from '../config';
+import config from '../config.json';
+
+const { modalMapping } = config;
 
 /**
  * Checks if a product is an the favorite list.
